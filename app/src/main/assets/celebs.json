@@ -1,0 +1,74 @@
+{
+  "celebs": [
+    {
+      "name": "Kriti Sanon",
+      "photo": "https://static.india.com/wp-content/uploads/2017/04/Kriti-Sanon-415x246.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Disha Patani",
+      "photo": "https://m.media-amazon.com/images/M/MV5BZmM3YTg2ZjUtNWMwMi00NWE2LWE1YmMtYWM1ZDViNmYzOWRkXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_UX140_CR0,0,140,209_AL_.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Tamannaah Bhatia",
+      "photo": "https://assets.architecturaldigest.in/photos/60812a76d327741a9504d3ae/2:3/w_719,h_1079,c_limit/Inside%20Tamannaah%20Bhatia's%20Mumbai%20home.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Sunny Leone",
+      "photo": "https://m.media-amazon.com/images/M/MV5BMTM2Mzc1MDYxOV5BMl5BanBnXkFtZTcwMzc1MDQ4Nw@@._V1_UY209_CR9,0,140,209_AL_.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Diana Penty",
+      "photo": "https://m.media-amazon.com/images/M/MV5BODUzMjU1NTk4M15BMl5BanBnXkFtZTcwNjU2MTcxOA@@._V1_UY209_CR12,0,140,209_AL_.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Pooja Hegde",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Pooja_Hegde_at_Ala_Vaikunthapurramuloo_reunion.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Yami Gautam",
+      "photo": "https://static.toiimg.com/thumb/msid-83421622,width-1200,height-900,resizemode-4/.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Rakul Preet Singh ",
+      "photo": "https://www.tollywood.net/wp-content/uploads/2020/12/Rakul-Preet-Singh-Sucker-for-love-and-believer-of-marriage.gif",
+      "gender": "Female"
+    },
+    {
+      "name": "Shruti Haasan",
+      "photo": "https://images.indulgexpress.com/uploads/user/imagelibrary/2019/10/9/original/ShrutiHaasan.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Raashi Khanna",
+      "photo": "https://www.mrdustbin.com/wp-content/uploads/2020/06/Raashi-Khanna-2.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Shruti Haasan",
+      "photo": "https://jbt-en-images.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/09/09123840/shruti-hasan-south-indian-beautiful-actress.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Rashmika Mandanna",
+      "photo": "https://jbt-en-images.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/09/09123815/Rashmika-Mandana-south-indian-beautiful-actress.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Kajal Aggarwal",
+      "photo": "https://jbt-en-images.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/09/09123719/kajal-Aggarwal-south-indian-beautiful-actress.jpg",
+      "gender": "Female"
+    },
+    {
+      "name": "Rakul Preet Singh",
+      "photo": "https://jbt-en-images.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/09/09123806/Rakul-preet-singh-south-indian-beautiful-actress.jpg",
+      "gender": "Female"
+    }
+  ]
+}
