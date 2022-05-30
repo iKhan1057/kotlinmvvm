@@ -12,41 +12,50 @@ import java.io.InputStream
 class CelebsViewModel : ViewModel() {
     val celebsdetails = MutableLiveData<List<CelebsModel>>()
 
-    fun refresh(context: Context) {
-        getCelebsDetails(context)
+    fun refresh() {
+        getCelebsDetails()
     }
+    private fun getCelebsDetails() {
 
-    private fun getCelebsDetails(context: Context) {
-        val celebslistdata: MutableList<CelebsModel> = ArrayList()
-        val parseddata = assetJSONFile("celebs.json", context)
-        val objectparse = JSONObject(parseddata)
-        objectparse.let {
-            val arraycelebs = objectparse.optJSONArray("celebs")
-            arraycelebs?.let {
-                for (i in 0 until arraycelebs.length()) {
-                    val celebsobject: JSONObject = arraycelebs[i] as JSONObject
-                    celebslistdata.add(
-                        CelebsModel(
-                            celebsobject.optString("name"),
-                            celebsobject.optString("photo"),
-                            celebsobject.optString("gender")
-                        )
-                    )
-                }
-            }
-        }
-        celebsdetails.value = celebslistdata
     }
 
 
-    fun assetJSONFile(filename: String?, context: Context): String {
-        val manager: AssetManager = context.assets
-        val file: InputStream = manager.open(filename!!)
-        val formArray = ByteArray(file.available())
-        file.read(formArray)
-        file.close()
-        return String(formArray)
-    }
+//from assets
+//fun refresh(context: Context) {
+//    getCelebsDetails(context)
+//}
+
+//    private fun getCelebsDetails(context: Context) {
+//        val celebslistdata: MutableList<CelebsModel> = ArrayList()
+//        val parseddata = assetJSONFile("celebs.json", context)
+//        val objectparse = JSONObject(parseddata)
+//        objectparse.let {
+//            val arraycelebs = objectparse.optJSONArray("celebs")
+//            arraycelebs?.let {
+//                for (i in 0 until arraycelebs.length()) {
+//                    val celebsobject: JSONObject = arraycelebs[i] as JSONObject
+//                    celebslistdata.add(
+//                        CelebsModel(
+//                            celebsobject.optString("name"),
+//                            celebsobject.optString("photo"),
+//                            celebsobject.optString("gender")
+//                        )
+//                    )
+//                }
+//            }
+//        }
+//        celebsdetails.value = celebslistdata
+//    }
+//
+//
+//    fun assetJSONFile(filename: String?, context: Context): String {
+//        val manager: AssetManager = context.assets
+//        val file: InputStream = manager.open(filename!!)
+//        val formArray = ByteArray(file.available())
+//        file.read(formArray)
+//        file.close()
+//        return String(formArray)
+//    }
 
 //static data
 //    private fun getCelebsDetails() {

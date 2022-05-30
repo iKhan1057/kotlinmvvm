@@ -16,11 +16,12 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         viewmodel = ViewModelProvider(this).get(CelebsViewModel::class.java)
-        viewmodel.refresh(this)
-
+//required when context is needed
+//        viewmodel.refresh(this)
+        viewmodel.refresh()
         binding.recCelebs.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = adapterCelebs
