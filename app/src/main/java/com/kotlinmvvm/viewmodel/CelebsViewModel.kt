@@ -26,6 +26,8 @@ class CelebsViewModel : ViewModel() {
     private val disposable = CompositeDisposable()
 
     private fun getCelebsDetails() {
+        celebsLoadError.value = false
+        loading.value = true
         disposable.add(
             celebsService.getCelebs()
                 .subscribeOn(Schedulers.newThread())

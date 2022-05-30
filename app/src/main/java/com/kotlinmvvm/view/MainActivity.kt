@@ -2,6 +2,8 @@ package com.kotlinmvvm.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -27,12 +29,34 @@ class MainActivity : AppCompatActivity() {
             adapter = adapterCelebs
         }
         observeViewModel()
-
     }
 
     private fun observeViewModel() {
         viewmodel.celebsdetails.observe(this, Observer { celebslist ->
-            celebslist.let { adapterCelebs.updateCelebsList(celebslist) }
+            celebslist.let {
+                adapterCelebs.updateCelebsList(celebslist)
+                binding.linLoader.visibility = GONE
+                binding.recCelebs.visibility = VISIBLE
+            }
         })
+
+        viewmodel.loading.observe(this, Observer { loading ->
+            loading.let {
+                if (it) {
+                    binding.linLoader.visibility = VISIBLE
+                    binding.recCelebs.visibility = GONE
+                }
+            }
+        })
+
+        viewmodel.celebsLoadError.observe(this, Observer { error ->
+            error.let {
+                if (it) {
+                    binding.linLoader.visibility = GONE
+                    binding.recCelebs.visibility = GONE
+                }
+            }
+        })
+
     }
 }
