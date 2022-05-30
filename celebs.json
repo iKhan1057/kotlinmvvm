@@ -1,5 +1,4 @@
-{
-  "celebs": [
+[
     {
       "name": "Kriti Sanon",
       "photo": "https://static.india.com/wp-content/uploads/2017/04/Kriti-Sanon-415x246.jpg",
@@ -71,4 +70,3 @@
       "gender": "Female"
     }
   ]
-}
