@@ -5,20 +5,50 @@ import android.content.res.AssetManager
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kotlinmvvm.data.CelebsModel
+import com.kotlinmvvm.data.CelebsServices
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.observers.DisposableSingleObserver
+import io.reactivex.schedulers.Schedulers
 import org.json.JSONObject
 import java.io.InputStream
 
 
 class CelebsViewModel : ViewModel() {
     val celebsdetails = MutableLiveData<List<CelebsModel>>()
-
+    val loading = MutableLiveData<Boolean>()
+    val celebsLoadError = MutableLiveData<Boolean>()
     fun refresh() {
         getCelebsDetails()
     }
-    private fun getCelebsDetails() {
 
+    private val celebsService = CelebsServices()
+    private val disposable = CompositeDisposable()
+
+    private fun getCelebsDetails() {
+        disposable.add(
+            celebsService.getCelebs()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSingleObserver<List<CelebsModel>>() {
+                    override fun onSuccess(value: List<CelebsModel>?) {
+                        celebsdetails.value = value
+                        celebsLoadError.value = false
+                        loading.value = false
+                    }
+
+                    override fun onError(e: Throwable?) {
+                        celebsLoadError.value = true
+                        loading.value = false
+                    }
+                })
+        )
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        disposable.clear()
+    }
 
 //from assets
 //fun refresh(context: Context) {

@@ -1,3 +1,11 @@
 package com.kotlinmvvm.data
 
-data class CelebsModel(var name:String?,var photo:String?,var gender:String?)
+import com.google.gson.annotations.SerializedName
+
+data class CelebsModel(
+    @SerializedName("name")
+    var name:String?,
+    @SerializedName("photo")
+    var photo:String?,
+    @SerializedName("gender")
+    var gender:String?)

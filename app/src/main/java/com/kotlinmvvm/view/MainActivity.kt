@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         viewmodel = ViewModelProvider(this).get(CelebsViewModel::class.java)
-//required when context is needed
+        //required when context is needed
 //        viewmodel.refresh(this)
         viewmodel.refresh()
         binding.recCelebs.apply {
